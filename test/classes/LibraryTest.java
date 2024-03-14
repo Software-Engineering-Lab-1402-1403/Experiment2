@@ -35,8 +35,8 @@ class LibraryTest {
 
 
         assertAll(() -> assertTrue(library.lendBook(book2, student3)),
-                () -> assertFalse(library.lendBook(book5, student1)),
                 () -> assertFalse(library.lendBook(book1, student4)));
+        assertFalse(library.lendBook(book5, student1));
         assertTrue(student3.hasBook(book2));
         assertFalse(library.hasBook(book2));
     }
@@ -70,9 +70,9 @@ class LibraryTest {
         library.lendBook(book2, student3);
         library.returnBook(book2, student3);
 
-        assertAll(() -> assertTrue(library.returnBook(book2, student3)),
-                () -> assertFalse(library.returnBook(book5, student3)),
-                () -> assertFalse(library.returnBook(book5, student4)));
+        assertTrue(library.returnBook(book2, student3));
+        assertFalse(library.returnBook(book5, student4));
+        assertFalse(library.returnBook(book5, student3));
         assertTrue(library.hasBook(book2));
         assertFalse(student3.hasBook(book2));
     }
