@@ -105,8 +105,30 @@ class LibraryTest {
         ArrayList<Student> second_answer = new ArrayList<Student>();
         second_answer.add(student1);
 
+        ArrayList<Object> third_keys = new ArrayList<Object>();
+        third_keys.add(14);
+        third_keys.add(13);
+        ArrayList<Student> third_answer = new ArrayList<Student>();
+
+        ArrayList<Object> forth_keys = new ArrayList<Object>();
+        third_keys.add("Alice");
+        third_keys.add("John");
+        ArrayList<Student> forth_answer = new ArrayList<Student>();
+        forth_answer.add(student1);
+        forth_answer.add(student3);
+
+        ArrayList<Object> fifth_keys = new ArrayList<Object>();
+        fifth_keys.add("Bob");
+        fifth_keys.add("Not-registered-student");
+        ArrayList<Student> fifth_answer = new ArrayList<Student>();
+        fifth_answer.add(student2);
+
+
         assertAll(() -> assertIterableEquals(first_answer, library.searchStudents(SearchByType.ID, first_keys)),
-                () -> assertIterableEquals(second_answer, library.searchStudents(SearchByType.ID, second_keys)));
+                () -> assertIterableEquals(second_answer, library.searchStudents(SearchByType.ID, second_keys)),
+                () -> assertIterableEquals(third_answer, library.searchStudents(SearchByType.ID, third_keys)),
+                () -> assertIterableEquals(forth_answer, library.searchStudents(SearchByType.NAME, forth_keys)),
+                () -> assertIterableEquals(fifth_answer, library.searchStudents(SearchByType.NAME, fifth_keys)));
     }
 
     @Test
