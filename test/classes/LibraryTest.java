@@ -99,7 +99,14 @@ class LibraryTest {
         first_answer.add(student1);
         first_answer.add(student2);
 
-        assertAll(() -> assertIterableEquals(first_answer, library.searchStudents(SearchByType.ID, first_keys)));
+        ArrayList<Object> second_keys = new ArrayList<Object>();
+        second_keys.add(10);
+        second_keys.add(13);
+        ArrayList<Student> second_answer = new ArrayList<Student>();
+        second_answer.add(student1);
+
+        assertAll(() -> assertIterableEquals(first_answer, library.searchStudents(SearchByType.ID, first_keys)),
+                () -> assertIterableEquals(second_answer, library.searchStudents(SearchByType.ID, second_keys)));
     }
 
     @Test
