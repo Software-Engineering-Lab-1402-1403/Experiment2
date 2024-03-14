@@ -111,8 +111,8 @@ class LibraryTest {
         ArrayList<Student> third_answer = new ArrayList<Student>();
 
         ArrayList<Object> forth_keys = new ArrayList<Object>();
-        third_keys.add("Alice");
-        third_keys.add("John");
+        forth_keys.add("Alice");
+        forth_keys.add("John");
         ArrayList<Student> forth_answer = new ArrayList<Student>();
         forth_answer.add(student1);
         forth_answer.add(student3);

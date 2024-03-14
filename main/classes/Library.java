@@ -88,6 +88,11 @@ public class Library {
                 if (keys.contains(student.getId())) { answer.add(student);}
             }
         }
+        if (searchByType == SearchByType.NAME) {
+            for (Student student : students) {
+                if (keys.contains(student.getName())) { answer.add(student);}
+            }
+        }
         return answer;
     }
 
