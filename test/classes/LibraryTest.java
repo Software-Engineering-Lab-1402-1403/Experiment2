@@ -68,7 +68,6 @@ class LibraryTest {
 
         library.lendBook(book1, student1);
         library.lendBook(book2, student3);
-        library.returnBook(book2, student3);
 
         assertTrue(library.returnBook(book2, student3));
         assertFalse(library.returnBook(book5, student4));
