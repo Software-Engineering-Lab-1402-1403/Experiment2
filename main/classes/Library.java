@@ -15,6 +15,8 @@ public class Library {
         books.add(book);
     }
 
+    public boolean hasBook(Book book) {return this.books.contains(book);}
+
     public void addStudent(Student student) {
         students.add(student);
     }
@@ -28,7 +30,7 @@ public class Library {
      * @return        Returns true if the operation is successful and false otherwise.
      */
     public boolean lendBook(Book book, Student student) {
-        if (!this.books.contains(book)) {
+        if (!this.hasBook(book)) {
             System.out.println("!! Book " + book.getTitle() + " not registered.");
             return false;
         }
