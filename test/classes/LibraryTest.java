@@ -2,8 +2,11 @@ package test.classes;
 
 import main.classes.Book;
 import main.classes.Library;
+import main.classes.SearchByType;
 import main.classes.Student;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -78,6 +81,25 @@ class LibraryTest {
 
     @Test
     void searchStudents() {
+        Library library = new Library();
+
+        Student student1 = new Student("Alice", 10);
+        Student student2 = new Student("Bob", 11);
+        Student student3 = new Student("John", 12);
+        Student student4 = new Student("Not-registered-student", 13);
+
+        library.addStudent(student1);
+        library.addStudent(student2);
+        library.addStudent(student3);
+
+        ArrayList<Object> first_keys = new ArrayList<Object>();
+        first_keys.add(10);
+        first_keys.add(11);
+        ArrayList<Student> first_answer = new ArrayList<Student>();
+        first_answer.add(student1);
+        first_answer.add(student2);
+
+        assertAll(() -> assertIterableEquals(first_answer, library.searchStudents(SearchByType.ID, first_keys)));
     }
 
     @Test
