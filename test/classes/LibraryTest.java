@@ -45,6 +45,7 @@ class LibraryTest {
         assertAll(() -> assertTrue(library.returnBook(book2, student3)),
                 () -> assertFalse(library.returnBook(book5, student3)),
                 () -> assertFalse(library.returnBook(book5, student4)));
+        assertFalse(student3.hasBook(book2));
     }
 
     @Test
