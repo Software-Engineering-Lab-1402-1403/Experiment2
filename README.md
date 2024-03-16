@@ -1,12 +1,14 @@
 # Experiment2
 
+
+
 # Questions
 ## 1. 
 Test-Driven Development (TDD) and Traditional Testing are two common approaches to software testing. Both methods have their own advantages and disadvantages and are better suited for certain types of projects.
 
 The key difference between the two lies in when the tests are written:
 
-###TDD:
+### TDD:
 Tests are written before any code is written.
 ### Traditional Testing: 
 Tests are written after the code is written.
