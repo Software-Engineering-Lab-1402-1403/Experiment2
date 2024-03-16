@@ -177,12 +177,26 @@ class LibraryTest {
         ArrayList<Book> fifth_answer = new ArrayList<Book>();
         fifth_answer.add(book3);
 
+        ArrayList<Object> sixth_keys = new ArrayList<Object>();
+        sixth_keys.add("Author-1");
+        ArrayList<Book> sixth_answers = new ArrayList<Book>();
+        sixth_answers.add(book1);
+        sixth_answers.add(book4);
+
+        ArrayList<Object> seventh_keys = new ArrayList<Object>();
+        seventh_keys.add("Author-2");
+        seventh_keys.add("Author-4");
+        ArrayList<Book> seventh_answer = new ArrayList<Book>();
+        seventh_answer.add(book2);
+
 
         assertAll(() -> assertIterableEquals(first_answer, library.searchBooks(SearchByType.ID, first_keys)),
                 () -> assertIterableEquals(second_answer, library.searchBooks(SearchByType.ID, second_keys)),
                 () -> assertIterableEquals(third_answer, library.searchBooks(SearchByType.ID, third_keys)),
-                () -> assertIterableEquals(forth_answer, library.searchBooks(SearchByType.NAME, forth_keys)),
-                () -> assertIterableEquals(fifth_answer, library.searchBooks(SearchByType.NAME, fifth_keys)));
+                () -> assertIterableEquals(forth_answer, library.searchBooks(SearchByType.TITLE, forth_keys)),
+                () -> assertIterableEquals(fifth_answer, library.searchBooks(SearchByType.TITLE, fifth_keys)),
+                () -> assertIterableEquals(sixth_answers, library.searchBooks(SearchByType.AUTHOR, sixth_keys)),
+                () -> assertIterableEquals(seventh_answer, library.searchBooks(SearchByType.AUTHOR, seventh_keys)));
     }
 
     @Test
