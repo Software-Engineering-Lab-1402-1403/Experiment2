@@ -2,33 +2,33 @@
 
 At the first place like the photo below we create Junit tests in Project Structure.
 
-https://github.com/Software-Engineering-Lab-1402-1403/Experiment2/blob/main/Pics/1.png
-https://github.com/Software-Engineering-Lab-1402-1403/Experiment2/blob/main/Pics/2.png
+![alt text](https://github.com/Software-Engineering-Lab-1402-1403/Experiment2/blob/main/Pics/1.png?raw=true)
+![alt text](https://github.com/Software-Engineering-Lab-1402-1403/Experiment2/blob/main/Pics/2.png?raw=true)
 
 Then we create test methods for functional methods we wanted like this:
 
-https://github.com/Software-Engineering-Lab-1402-1403/Experiment2/blob/main/Pics/3.png
+![alt text](https://github.com/Software-Engineering-Lab-1402-1403/Experiment2/blob/main/Pics/3.png?raw=true)
 
 Then We wrote a peice of code to test returnBook method and show its bug.
 
-https://github.com/Software-Engineering-Lab-1402-1403/Experiment2/blob/main/Pics/4.png
+![alt text](https://github.com/Software-Engineering-Lab-1402-1403/Experiment2/blob/main/Pics/4.png?raw=true)
 
 After the failure we fixed returnBook method so the tests passed like this:
 
-https://github.com/Software-Engineering-Lab-1402-1403/Experiment2/blob/main/Pics/5.png
+![alt text](https://github.com/Software-Engineering-Lab-1402-1403/Experiment2/blob/main/Pics/5.png?raw=true)
 
 The problem was because returnBook didn't remove the book has been returned from students list of book. This is how we fixed this method:
 
-https://github.com/Software-Engineering-Lab-1402-1403/Experiment2/blob/main/Pics/6.png
+![alt text](https://github.com/Software-Engineering-Lab-1402-1403/Experiment2/blob/main/Pics/6.png?raw=true)
 
 We fixed lenBook method bug like this after the tests failed.
 
-https://github.com/Software-Engineering-Lab-1402-1403/Experiment2/blob/main/Pics/7.png
+![alt text](https://github.com/Software-Engineering-Lab-1402-1403/Experiment2/blob/main/Pics/7.png?raw=true)
 
 Then for developing features with TDD, 1- we wrote tests that states the requirements for method searchStudents.
 Then we complete this method to pass the requirements.
 
-https://github.com/Software-Engineering-Lab-1402-1403/Experiment2/blob/main/Pics/8.png
+![alt text](https://github.com/Software-Engineering-Lab-1402-1403/Experiment2/blob/main/Pics/8.png?raw=true)
 
 Then we did the same thing for method searchBooks.
 
