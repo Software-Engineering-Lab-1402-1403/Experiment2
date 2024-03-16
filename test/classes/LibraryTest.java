@@ -133,6 +133,56 @@ class LibraryTest {
 
     @Test
     void searchBooks() {
+        Library library = new Library();
+
+        Book book1 = new Book("Book-1", "Author-1", 10);
+        Book book2 = new Book("Book-2", "Author-2", 11);
+        Book book3 = new Book("Book-3", "Author-3", 12);
+        Book book4 = new Book("Book-4", "Author-1", 13);
+        Book book5 = new Book("Not-owned-book", "Author-1", 15);
+
+        library.addBook(book1);
+        library.addBook(book2);
+        library.addBook(book3);
+        library.addBook(book4);
+
+        ArrayList<Object> first_keys = new ArrayList<Object>();
+        first_keys.add(10);
+        first_keys.add(11);
+        ArrayList<Book> first_answer = new ArrayList<Book>();
+        first_answer.add(book1);
+        first_answer.add(book2);
+
+        ArrayList<Object> second_keys = new ArrayList<Object>();
+        second_keys.add(10);
+        second_keys.add(15);
+        ArrayList<Book> second_answer = new ArrayList<Book>();
+        second_answer.add(book1);
+
+        ArrayList<Object> third_keys = new ArrayList<Object>();
+        third_keys.add(14);
+        third_keys.add(15);
+        ArrayList<Book> third_answer = new ArrayList<Book>();
+
+        ArrayList<Object> forth_keys = new ArrayList<Object>();
+        forth_keys.add("Book-1");
+        forth_keys.add("Book-2");
+        ArrayList<Book> forth_answer = new ArrayList<Book>();
+        forth_answer.add(book1);
+        forth_answer.add(book2);
+
+        ArrayList<Object> fifth_keys = new ArrayList<Object>();
+        fifth_keys.add("Book-3");
+        fifth_keys.add("Not-owned-book");
+        ArrayList<Book> fifth_answer = new ArrayList<Book>();
+        fifth_answer.add(book3);
+
+
+        assertAll(() -> assertIterableEquals(first_answer, library.searchBooks(SearchByType.ID, first_keys)),
+                () -> assertIterableEquals(second_answer, library.searchBooks(SearchByType.ID, second_keys)),
+                () -> assertIterableEquals(third_answer, library.searchBooks(SearchByType.ID, third_keys)),
+                () -> assertIterableEquals(forth_answer, library.searchBooks(SearchByType.NAME, forth_keys)),
+                () -> assertIterableEquals(fifth_answer, library.searchBooks(SearchByType.NAME, fifth_keys)));
     }
 
     @Test
